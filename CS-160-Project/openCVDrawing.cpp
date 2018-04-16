@@ -52,7 +52,6 @@ static void run (face_landmark_node *face_landmark_list_head, char* fileName)
     
     if (input_filename[0] != '\0')
     {
-        cout << "Path: " << output_filename << endl;
         source_image = cv::imread (&input_filename[0]);
         if (!source_image.empty())
         {
