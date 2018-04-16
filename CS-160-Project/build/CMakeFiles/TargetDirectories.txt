@@ -1,0 +1,6 @@
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles/rebuild_cache.dir
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles/edit_cache.dir
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles/main.dir
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/CMakeFiles/rebuild_cache.dir
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/CMakeFiles/edit_cache.dir
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/CMakeFiles/dlib.dir

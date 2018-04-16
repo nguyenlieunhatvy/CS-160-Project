@@ -1,0 +1,26 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX11 succeeded with the following output:
+Change Dir: /Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/cpp11_test_build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_05dd0/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_05dd0.dir/build.make CMakeFiles/cmTC_05dd0.dir/build
+Building CXX object CMakeFiles/cmTC_05dd0.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -DCOMPILER_SUPPORTS_CXX11   -std=c++11 -o CMakeFiles/cmTC_05dd0.dir/src.cxx.o -c "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/cpp11_test_build/CMakeFiles/CMakeTmp/src.cxx"
+Linking CXX executable cmTC_05dd0
+/usr/local/Cellar/cmake/3.11.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05dd0.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -DCOMPILER_SUPPORTS_CXX11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_05dd0.dir/src.cxx.o  -o cmTC_05dd0 
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX0X succeeded with the following output:
+Change Dir: /Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/cpp11_test_build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_97c4f/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_97c4f.dir/build.make CMakeFiles/cmTC_97c4f.dir/build
+Building CXX object CMakeFiles/cmTC_97c4f.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -DCOMPILER_SUPPORTS_CXX0X   -std=c++0x -o CMakeFiles/cmTC_97c4f.dir/src.cxx.o -c "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/cpp11_test_build/CMakeFiles/CMakeTmp/src.cxx"
+Linking CXX executable cmTC_97c4f
+/usr/local/Cellar/cmake/3.11.0/bin/cmake -E cmake_link_script CMakeFiles/cmTC_97c4f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -DCOMPILER_SUPPORTS_CXX0X -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_97c4f.dir/src.cxx.o  -o cmTC_97c4f 
+
+Source file was:
+int main() { return 0; }
