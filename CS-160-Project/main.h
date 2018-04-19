@@ -41,7 +41,7 @@ typedef struct thread_data {
 } thread_data;
 
 face_landmark_node * add_face_landmark_element(face_landmark_node *face_landmark_list_head, int frame, int indice, float pixel_location_x, float pixel_location_y);
-face_landmark_node * buildLandmarkListThread(landmark_data landmarks, face_landmark_node* face_landmark_list_head);
+face_landmark_node * buildLandmarkListThread(landmark_data landmarks, face_landmark_node* face_landmark_list_head, int frame);
 void drawDelauneyTrianglesThread(landmark_data* landmarks, char** fileNames, int size);
 static void run (face_landmark_node *face_landmark_list_head, char* fileName);
 static void draw_delaunay (cv::Mat &img, cv::Subdiv2D &subdiv, cv::Scalar delaunay_color);

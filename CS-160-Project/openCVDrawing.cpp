@@ -89,17 +89,17 @@ void drawDelauneyTrianglesThread(landmark_data* landmarks, char** fileNames, int
     for (int i = 1; i < size; i++){
         face_landmark_node *face_landmark_list_head;
         face_landmark_list_head = NULL;
-        face_landmark_list_head = buildLandmarkListThread(landmarks[i], face_landmark_list_head);
+        face_landmark_list_head = buildLandmarkListThread(landmarks[i], face_landmark_list_head, i);
         
         // Draw triangles for current frame
         run (face_landmark_list_head, fileNames[i]);
     }
 }
 
-face_landmark_node * buildLandmarkListThread(landmark_data landmarks, face_landmark_node* face_landmark_list_head){
+face_landmark_node * buildLandmarkListThread(landmark_data landmarks, face_landmark_node* face_landmark_list_head, int frame){
     for (int i = 0; i < NUM_LANDMARKS; i++){
         face_landmark_list_head = add_face_landmark_element (face_landmark_list_head,
-                                                             1,
+                                                             frame,
                                                              i,
                                                              landmarks.points[i].x(), landmarks.points[i].y());
     }
