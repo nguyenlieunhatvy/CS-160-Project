@@ -1,0 +1,97 @@
+<?php
+/**
+ * Joe Kanagawa (c) 2018
+ */
+
+class StandardPage {
+
+    /**
+     * StandardPage constructor.
+     * @param string $title String literal to be inserted between the title tag.
+     * @param string|array $js Path to JavaScript files. May specify multiple in an array.
+     */
+    public function __construct($title, $js = "") {
+        $echoStr = "<meta charset='UTF-8' />" .
+            "<link rel='stylesheet/less' type='text/less' href='/css/teamone.less' />" .
+            "<script src='https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js' ></script>" .
+            "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>";
+        if (is_array($js)) {
+            foreach ($js as $path)
+                $echoStr .= "<script src='$path'></script>";
+        } else
+            $echoStr .= "<script src='$js'></script>";
+        echo $echoStr . "<title>$title - TEAM ONE</title>";
+    }
+
+    /**
+     * A simple authentication method for logging in.
+     * @return bool|string false, if first time access. Empty string, if login failed.
+     */
+    public function authenticate() {
+        if (isset($_SESSION["uid"])) {
+            if ($_SESSION["uid"] !== "undefined") // if $_SESSION["uid"] contains undefined, incorrect login attempt.
+                return $_SESSION["firstname"]; // revisit without having logged out previously
+            else {
+                unset($_SESSION["uid"]);
+                return ""; // incorrect login credentials
+            }
+        }
+        return false; // first time access
+    }
+
+    /**
+     * A simple function to test whether or not the user has just logged out.
+     * @return bool true, if just logged out, and will output "Logout Successful" message.
+     */
+    public function justLoggedOut() {
+        if (isset($_SESSION["uid"])) {
+            if ($_SESSION["uid"] === "terminate") {
+                unset($_SESSION["uid"]);
+                unset($_SESSION["firstname"]);
+                session_destroy();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Shows all videos the corresponding user uploaded.
+     */
+    public function showUploadedVideos() {
+        $echoStr = "";
+        $pdo = new PDO(apache_getenv("PGSQL_DB_DSN"));
+        $stmt = $pdo->prepare("SELECT title,uploaddate,filesize,path " .
+            "FROM Video WHERE uploaderid = ? ORDER BY uploaddate DESC");
+        $stmt->bindValue(1, $_SESSION["uid"], PDO::PARAM_INT);
+        $stmt->execute();
+        while ($row = $stmt->fetch()) {
+            $echoStr .= "<div class='video_entry' onclick='teamone.selectVideo(\"$row[0]\", \"$row[3]\")'>" .
+                "<div><div class='thumbnail'></div><div><div><span title='$row[0]'>$row[0]</span>" .
+                "</div><div>Size: $row[2]B</div></div></div><div>Upload: $row[1]</div></div>";
+        }
+        echo $echoStr;
+    }
+
+    /**
+     * Prints HTML code of footer shown at the bottom of the page.
+     */
+    public function printFooter() {
+        echo "<div id='footer'><div class='text_box'>" .
+            "&copy;2018 SJSU CS160 SP18 - <a href='/about'>TEAM ONE</a></div></div>";
+    }
+
+    /**
+     * Prints HTML code of header shown at the top of the page.
+     */
+    public function printHeader() {
+        echo "<div class='text_box' id='header'>" .
+            "WELCOME! (to do: come up with a better header)</div>";
+    }
+
+    public function printUserMenu($username) {
+        echo "<div class='text_box' id='user_menu'>Welcome, $username | <a href='/'>Home</a>" .
+                " | <a style='cursor:pointer' onclick='teamone.logOut();'>Log Out</a> | " .
+                "<a href='/settings'>Account Settings</a></div>";
+    }
+}

@@ -1,0 +1,23 @@
+<span class="sub_header">Upload a Video</span>
+<form id="upload_form">
+    <div class="input_table">
+        <div>
+            <span>Select File</span>
+            <span><input type="file" /></span>
+        </div>
+        <div>
+            <span><label for="video_title">Title</label></span>
+            <span><input id="video_title" /></span>
+        </div>
+    </div>
+</form>
+Please be advised that..
+<ul style="margin:0 auto 10px;list-style-type:disc">
+    <li>..video size must be 10MB or below.</li>
+    <li>..the recommended file types are: mp4, avi, mov.</li>
+    <li>..once you hit the "upload" button, the file will be immediately uploaded.</li>
+    <li>..in case you upload the wrong file, you can always delete it afterwards.</li>
+</ul>
+<div style="width:100%;margin:10px auto;text-align:center">
+    <input type="submit" disabled value="Upload" onclick="teamone.upload();" />
+</div>

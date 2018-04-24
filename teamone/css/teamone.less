@@ -1,0 +1,305 @@
+/*
+ * teamone.css
+ * Where all common css statements reside.
+ * Uses less.js for code simplification.
+ * Joe Kanagawa (c) 2018
+ */
+
+@general-padding: 8px;
+
+a {
+    text-decoration: none;
+    &, &:visited {
+        color: #11A615;
+    }
+    &:hover {
+        color: #A611A1;
+    }
+}
+
+body {
+    position: relative;
+    background: url("/res/img/common/main_bg.jpg") repeat;
+    margin: 0;
+    min-height: 100%;
+    font-family: Calibri, sans-serif;
+    font-size: 17px;
+}
+
+html {
+    height: 100%
+}
+
+.input_table {
+    display: table;
+    margin: 10px auto;
+    width: 100%;
+    > div {
+        display: table-row;
+        > span {
+            display: table-cell;
+            height: 36px;
+            vertical-align: middle;
+            &:first-child {
+                text-align: right;
+            }
+            &:last-child {
+                padding-left: 20px;
+            }
+        }
+        &.pwd_not_match {
+            > span {
+                position: relative;
+                height: 46px;
+                vertical-align: top;
+                > span {
+                    position: absolute;
+                    bottom: 7px;
+                    color: red;
+                    font-size: 0.88em;
+                }
+            }
+        }
+    }
+}
+
+
+.check {
+    width: 13px;
+    height: 9px;
+    border: solid transparent;
+    border-width: 8px 6px; // always 25px square
+    background: url("/res/img/common/ico_check4_8.gif") no-repeat;
+}
+
+.error_message {
+    color: red;
+    font-size: 0.85em;
+}
+
+.loading {
+    width: 25px;
+    height: 25px;
+    background-image: url("/res/img/common/loader.gif");
+}
+
+.pop_up_err_msg {
+    color: red;
+    font-size: 0.9em;
+}
+
+.sub_header {
+    display: inline-block;
+    font-size: 1.2em;
+    color: #1e8729;
+    text-align: center;
+    width: 100%;
+}
+
+.text_box {
+    background-color: white;
+    border: 20px solid transparent;
+    -webkit-border-image: url("/res/img/common/border.png") 20 repeat;
+    -moz-border-image: url("/res/img/common/border.png") 20 repeat;
+    -o-border-image: url("/res/img/common/border.png") 20 repeat;
+    border-image: url("/res/img/common/border.png") 20 repeat;
+    padding: @general-padding 10px;
+}
+
+.thumbnail {
+    min-width: 57px;
+    height: 100%;
+    background-color: #364364;
+}
+
+.uap_each_container {
+    width: 100%;
+    padding: 20px 0;
+    > div {
+        margin: auto;
+        &:last-of-type {
+            margin: 10px 0;
+            width: inherit;
+            text-align: center;
+        }
+    }
+}
+
+.video_entry {
+    //display: flex;
+    //flex-wrap: wrap;
+    font-size: 0.85em;
+    cursor: pointer;
+    > div:first-of-type {
+        display: flex;
+        max-width: 100%;
+        height: 70%;
+        border: solid #828382;
+        border-width: 0 0 1px 0;
+        > div:not(.thumbnail) {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            > div {
+                margin-left: 4px;
+                flex-grow: 1;
+                /*> div {
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    transform: scale(0.5,0.5);
+                    background-image: url("/res/img/common/donotenter.png");
+                }*/
+            }
+        }
+    }
+}
+
+#add_img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    & {
+        background-image: url("/res/img/common/ico_plus8_20.gif");
+    }
+    &:hover {
+        background-image: url("/res/img/common/ico_plus8_4.gif");
+    }
+}
+
+#control_container {
+    margin: 60px auto 30px;
+    width: 700px;
+
+}
+
+#control_panel {
+}
+
+#cp_wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 30px 0;
+}
+
+#footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    > div {
+        display: inline-block;
+        margin: auto;
+    }
+}
+
+#header {
+    position: fixed;
+    background: linear-gradient(0deg, #110615, #115615);
+    border-width: 0 0 20px 0;
+    color: white; /* 暫定的 */
+    height: 48px;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+}
+
+#main_container {
+    padding: 68px 0 87px;
+    margin: auto;
+    width: 100%;
+}
+
+#main_window {
+    margin: 60px auto 30px;
+    width: 280px;
+    // min-height: 200px;
+}
+
+#pop_up_bg {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    > div { /* ポップアップウィンドウを縦中央に配置させるためにtableコンテナを配置 */
+        display: table;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        > div {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+    }
+}
+
+#pop_up_window {
+    display: inline-block;
+    background-color: lightgray;
+    border: double #1c8423 5px;
+    padding: @general-padding;
+    opacity: 0;
+    text-align: left;
+    max-width: 350px;
+}
+
+#video_box {
+    position: relative;
+    display: table;
+    border: solid 2px black;
+    margin-top: 10px;
+    width: 384px;
+    height: 288px;
+    > div { /* When no video is selected */
+        display: table-cell;
+        background-color: lightgray;
+        width: 100%;
+        padding: 0 10%;
+        text-align: center;
+        vertical-align: middle;
+    }
+    > video {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+#video_menu {
+    flex-grow: 1;
+    margin-left: 24px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0;
+    > div {
+        width: 100%;
+        height: 60px;
+        background: linear-gradient(0deg, #828382, #DBD8D7);
+        &:first-of-type { /* upload box */
+            display: table;
+            > div {
+                display: table-cell;
+                vertical-align: middle;
+                > div {
+                    display: flex;
+                    justify-content: space-around;
+                }
+            }
+        }
+    }
+    > div:hover {
+        background: linear-gradient(0deg, #558354, #91db83);
+    }
+}
+
+#video_settings {
+    display: flex;
+}
