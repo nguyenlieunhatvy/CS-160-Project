@@ -1,6 +1,10 @@
 ﻿<!DOCTYPE HTML>
 
 <?php
+/**
+ * Top page (c) 2018
+ * @author Joe Kanagawa
+ */
 session_name("sid");
 session_start();
 require "StandardPage.php"

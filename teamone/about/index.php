@@ -1,6 +1,12 @@
 <!DOCTYPE HTML>
 
-<?php require "StandardPage.php"; ?>
+<?php
+/**
+ * About page (c) 2018
+ * @author Joe Kanagawa
+ */
+require "StandardPage.php";
+?>
 
 <html>
 <head>
