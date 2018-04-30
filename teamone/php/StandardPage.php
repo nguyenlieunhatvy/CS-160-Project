@@ -74,6 +74,17 @@ class StandardPage {
     }
 
     /**
+     * Prints the error message that shows upon a 404 error.
+     */
+    public function print404ErrorMessage() {
+        echo "<div class='text_box' style='margin:70px auto 0;width:400px'>" .
+            "<span class='sub_header'>Page Not Found</span><p>The page you have requested was not found. " .
+            "It may have been permanently removed or could be under maintenance.<br />" .
+            "Please make sure that the spelling in the URL is correct, or try again later.<br /></p>" .
+            "<p>We apologize for any inconvenience.</p></div>";
+    }
+
+    /**
      * Prints HTML code of footer shown at the bottom of the page.
      */
     public function printFooter() {
@@ -89,6 +100,10 @@ class StandardPage {
             "WELCOME! (to do: come up with a better header)</div>";
     }
 
+    /**
+     * Prints HTML code responsible for the top menu in the user control panel.
+     * @param string $username Username to be displayed while logged in.
+     */
     public function printUserMenu($username) {
         echo "<div class='text_box' id='user_menu'>Welcome, $username | <a href='/'>Home</a>" .
                 " | <a style='cursor:pointer' onclick='teamone.logOut();'>Log Out</a> | " .

@@ -63,7 +63,9 @@ $lgOutAcc = $page->justLoggedOut();
             <div id="cp_wrapper">
                 <div class="text_box" id="control_panel">
                     <div id="video_settings">
-                        <span>Currently Playing: None</span>
+                        <span>Playing: None</span>
+                        <div id="delete_video" title="Click here to delete the selected video" ></div>
+                        <div id="rename_video" title="Click here to rename the selected video"></div>
                     </div>
                     <div id="video_box">
                         <div>

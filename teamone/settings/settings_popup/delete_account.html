@@ -1,0 +1,22 @@
+<span class="sub_header">Confirm Deletion</span>
+<p>
+    Are you sure you would like to delete your account?<br />
+    Please note that this action cannot be reverted.
+</p>
+<p>
+    For added security, please enter your password below to remove.
+</p>
+<div style="border:solid #828382;border-width:1px 0 0 0;padding-top:10px">
+    You may exit this dialog by clicking anywhere outside of the pop up.<br />
+    <div class="input_table">
+        <div>
+            <span><label for="confirm_password">Password</label></span>
+            <span><input type="password" id="confirm_password" /></span>
+        </div>
+        <div>
+            <span></span>
+            <span><input id="new_submit" type="submit" value="Delete Account"
+                         disabled onclick="teamone.deleteAccount();"></span>
+        </div>
+    </div>
+</div>

@@ -12,10 +12,10 @@ require "StandardPage.php";
 <head>
     <style type="text/less">
         #main_window {
-            margin: 60px auto 30px;
-            width: 550px;
+            margin: 60px auto 30px !important;
+            width: 550px !important;
             > div:not(:first-of-type):not(:last-of-type) {
-                margin: 20px auto;
+                margin: 20px auto !important;
             }
         }
     </style>
@@ -52,7 +52,8 @@ require "StandardPage.php";
         <div>
             <span class="sub_header">I Wish To Be a One-time User</span><br />
             You would still need to create an account. Once you are done, you can delete your account <!--
-            -->through the control panel.
+            -->through the control panel. Deleting an account will automatically delete all of the user's <!--
+            -->uploaded videos.
         </div>
     </div>
 </div>

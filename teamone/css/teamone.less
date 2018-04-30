@@ -6,6 +6,7 @@
  */
 
 @general-padding: 8px;
+@video-width: 384px;
 
 a {
     text-decoration: none;
@@ -140,6 +141,7 @@ html {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
+            white-space: nowrap;
             > div {
                 margin-left: 4px;
                 flex-grow: 1;
@@ -256,7 +258,7 @@ html {
     display: table;
     border: solid 2px black;
     margin-top: 10px;
-    width: 384px;
+    width: @video-width;
     height: 288px;
     > div { /* When no video is selected */
         display: table-cell;
@@ -302,4 +304,23 @@ html {
 
 #video_settings {
     display: flex;
+    max-width: @video-width;
+    > span {
+        display: block;
+        flex-grow: 1;
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+    }
+    > div {
+        margin: 0 5px;
+        min-width: 20px;
+        min-height: 20px;
+        &#delete_video {
+            background: url("/res/img/common/sozai_cman_jp_delete_n.png") no-repeat;
+        }
+        &#rename_video {
+            background: url("/res/img/common/sozai_cman_jp_rename_n.png") center no-repeat;
+        }
+    }
 }

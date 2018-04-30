@@ -14,7 +14,7 @@ CREATE TABLE Userbase (
 DROP TABLE IF EXISTS Video;
 CREATE TABLE Video (
   id SERIAL PRIMARY KEY,
-  uploaderId INTEGER REFERENCES Userbase(id),
+  uploaderId INTEGER REFERENCES Userbase(id) ON DELETE CASCADE,
   title VARCHAR(64),
   uploadDate TIMESTAMP,
   fileSize INT,
