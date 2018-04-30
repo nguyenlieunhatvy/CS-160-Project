@@ -31,6 +31,32 @@ html {
     height: 100%
 }
 
+input[type=submit] {
+    padding: 2px 5px;
+    border-width: 2px;
+    cursor: pointer;
+    & {
+        border: solid #1c8423;
+        background-color: #91db83;
+    }
+    &:hover {
+        border: solid #A611A1;
+        background-color: #f98ee6;
+    }
+    &:active {
+        border: solid orangered;
+        background-color: #ffa18b;
+    }
+    &:disabled {
+        border: solid darkgray;
+        background-color: lightgray;
+        cursor: default;
+    }
+    &:focus {
+        outline: 0;
+    }
+}
+
 .input_table {
     display: table;
     margin: 10px auto;

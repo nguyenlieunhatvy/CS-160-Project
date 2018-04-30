@@ -5,10 +5,7 @@
 
 var teamone = (function() {
     var userInfo = {};
-    var currentlySelected = {
-        "path": null,
-        "title": null
-    };
+    var pathToCurrentlySelected = false;
 
     // private関数
     /**
@@ -125,7 +122,7 @@ var teamone = (function() {
         "modifyVideo": function (type) {
             var data = {
                 "modifyType": type,
-                "path": currentlySelected["path"]
+                "path": pathToCurrentlySelected
             };
             if (type === "rename")
                 data["title"] = $("#new_video_name").val();
@@ -158,18 +155,19 @@ var teamone = (function() {
                 .prop("controls", true).css("background-color", "black").prev().remove();
             var vset = $("#video_settings");
             vset.children("span").html("Playing: " + title);
-            currentlySelected["path"] = path;
-            currentlySelected["title"] = title;
-            vset.children("div").each(function () {
-                $(this).css({
-                    "background-image": $(this).css("background-image").replace(/_n(?=\.\w+"\)$)/, ""),
-                    "cursor": "pointer"
-                }).click(function () { // bind click event
-                    var isDeleteVideo = $(this).get(0).id === "delete_video";
-                    showPopUp(isDeleteVideo ? "video_settings/delete_video.html" :
-                        "video_settings/rename_video.html");
+            if (!pathToCurrentlySelected) {
+                vset.children("div").each(function () {
+                    $(this).css({
+                        "background-image": $(this).css("background-image").replace(/_n(?=\.\w+"\)$)/, ""),
+                        "cursor": "pointer"
+                    }).click(function () { // bind click event
+                        var isDeleteVideo = $(this).get(0).id === "delete_video";
+                        showPopUp(isDeleteVideo ? "video_settings/delete_video.html" :
+                            "video_settings/rename_video.html");
+                    });
                 });
-            });
+            }
+            pathToCurrentlySelected = path;
         },
 
         "showSignUp": function () {
@@ -201,7 +199,7 @@ var teamone = (function() {
                                 popUpWindow.load("settings_popup/success.html");
                                 break;
                             case "pwd_not_match":
-                                if (popUpWindow.find(".pwd_message").length === 0) {
+                                if (popUpWindow.find(".pwd_msg").length === 0) {
                                     if (popUpWindow.find(".fail_msg").length === 2)
                                         popUpWindow.find(".fail_msg").remove();
                                     popUpWindow.children(".sub_header")
