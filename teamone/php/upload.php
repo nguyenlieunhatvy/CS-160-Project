@@ -25,8 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->bindValue(2, $_POST["title"] ? $_POST["title"] : $_FILES["video"]["name"]);
             $stmt->bindValue(3, $_FILES["video"]["size"], PDO::PARAM_INT);
             $stmt->bindValue(4, basename($destFullPath));
-            $stmt->execute();
-            exit;
+            if ($stmt->execute()) {
+                $stmt = $pdo->prepare("SELECT MAX(id) FROM Video WHERE uploaderid = ?");
+                $stmt->bindValue(1, $_SESSION["uid"], PDO::PARAM_INT);
+                $stmt->execute();
+                if ($row = $stmt->fetch()) {
+                    echo $row[0];
+                    exit;
+                }
+            }
         }
     }
 }
