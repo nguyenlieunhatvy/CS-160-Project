@@ -265,8 +265,9 @@ var teamone = (function() {
                         "method": "POST",
                         "url": "/php/process_video.php"
                     }).done(function (data) {
+                        console.log(data);
                         if (data === "success") {
-                            var timer = setInterval(function () {
+                            /*var timer = setInterval(function () {
                                 $.ajax({
                                     "data": {
                                         "check": "1",
@@ -276,14 +277,14 @@ var teamone = (function() {
                                     "method": "POST",
                                     "url": "/php/process_video.php"
                                 }).done(function(data) {
-                                    if (data === "complete")
+                                    if (data === "complete") */
                                         $("#pop_up_window").find(".loading").removeClass("loading")
                                             .addClass("check").next().html("Processing Complete!");
-                                    clearInterval(timer);
+                                    /*clearInterval(timer);
                                 })
-                            }, 5000);
+                            }, 5000);*/
                         }
-                    })
+                    });
                 }
 
             });
