@@ -61,12 +61,13 @@ class StandardPage {
     public function showUploadedVideos() {
         $echoStr = "";
         $pdo = new PDO(apache_getenv("PGSQL_DB_DSN"));
-        $stmt = $pdo->prepare("SELECT title,uploaddate,filesize,path " .
-            "FROM Video WHERE uploaderid = ? ORDER BY uploaddate DESC");
+        $stmt = $pdo->prepare("SELECT title,uploaddate,filesize,path,isprocessed FROM " .
+            "Video WHERE uploaderid = ? ORDER BY uploaddate DESC");
         $stmt->bindValue(1, $_SESSION["uid"], PDO::PARAM_INT);
         $stmt->execute();
         while ($row = $stmt->fetch()) {
-            $echoStr .= "<div class='video_entry' onclick='teamone.selectVideo(\"$row[0]\", \"$row[3]\")'>" .
+            // $thumbnail = $row[4] === "t" ? "/res/thumbnail/" . $row[3] : "#364364";
+            $echoStr .= "<div class='video_entry' onclick='teamone.selectVideo(\"$row[0]\", \"$row[3]\",\"$row[4]\")'>" .
                 "<div><div class='thumbnail'></div><div><div><span title='$row[0]'>$row[0]</span>" .
                 "</div><div>Size: $row[2]B</div></div></div><div>Upload: $row[1]</div></div>";
         }

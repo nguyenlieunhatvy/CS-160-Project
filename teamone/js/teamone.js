@@ -7,7 +7,7 @@ var teamone = (function() {
     var userInfo = {};
     var pathToCurrentlySelected = false;
 
-    // private関数
+    // private
     /**
      * Calling this function will cause the website to show a pop up window.
      * @param {string} popUpHTML The path to the HTML file, the actual contents of the pop up, that will go inside the window.
@@ -56,7 +56,7 @@ var teamone = (function() {
             $("#new_submit").prop("disabled", false);
     }
 
-    // 以下public関数として全世界に発信
+    // The below are public functions
     return {
         "confirmDelete": function () {
             showPopUp("settings_popup/delete_account.html").on("input", function () {
@@ -132,7 +132,6 @@ var teamone = (function() {
                 "method": "POST",
                 "url": "/php/modify_video.php"
             }).done(function (data) {
-                console.log(data);
                 if (data === "success") {
                     $("#pop_up_window").load("video_settings/success.html", function () {
                         $(".sub_header").children("span").html(type === "delete" ? "Deleted" : "Renamed");
@@ -150,7 +149,12 @@ var teamone = (function() {
             });
         },
 
-        "selectVideo": function (title, path) {
+        "selectVideo": function (title, path, isProcessed) {
+            if (!parseInt(isProcessed)) {
+                $("#video_box").children("div").html("It appears the video has not finished processing yet." +
+                    "<br />Please try again later.");
+                return;
+            }
             $("video").attr("src", "/res/video/" + path)
                 .prop("controls", true).css("background-color", "black").prev().remove();
             var vset = $("#video_settings");
@@ -246,16 +250,41 @@ var teamone = (function() {
                 "processData": false,
                 "url": "/php/upload.php"
             }).done(function(data) {
-                if (data) { // fail
-                    console.log(data); // process用 ajaxを送信
+                if (data === "fail") { // fail
+                    console.log(data);
                 } else { // success, process it
-                    console.log("success!");
                     $("#pop_up_window").find(".loading").eq(0)
                         .removeClass("loading").addClass("check").next().html("Upload complete!");
                     $(".uap_each_container").eq(1).children(":not(.loading)").html("Processing video..");
+                    var videoId = data;
                     $.ajax({
-                        // exec it up here
-                    })
+                        "data": {
+                            "vid": videoId
+                        },
+                        "dataType": "text",
+                        "method": "POST",
+                        "url": "/php/process_video.php"
+                    }).done(function (data) {
+                        console.log(data);
+                        if (data === "success") {
+                            /*var timer = setInterval(function () {
+                                $.ajax({
+                                    "data": {
+                                        "check": "1",
+                                        "vid": videoId
+                                    },
+                                    "dataTyp": "text",
+                                    "method": "POST",
+                                    "url": "/php/process_video.php"
+                                }).done(function(data) {
+                                    if (data === "complete") */
+                                        $("#pop_up_window").find(".loading").removeClass("loading")
+                                            .addClass("check").next().html("Processing Complete!");
+                                    /*clearInterval(timer);
+                                })
+                            }, 5000);*/
+                        }
+                    });
                 }
 
             });
