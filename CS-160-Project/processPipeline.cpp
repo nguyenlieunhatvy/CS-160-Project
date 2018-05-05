@@ -26,7 +26,7 @@ int main(int argc, char **argv){
 	std::system(splitString);
 
 	// process the frames
-	snprintf(splitString, sizeof(splitString) - 1, "cd build; %s ./Input/*.png; cd ..;", argv[2]);
+	snprintf(splitString, sizeof(splitString) - 1, "cd build; ./%s ./Input/*.png; cd ..;", argv[2]);
 	//cout << "The string !!" << splitString << "\n"; // For debugging
     std::system(splitString);
     
