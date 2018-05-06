@@ -51,7 +51,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/cmake_utils/test_for_cpp11
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/cpp11_test_build"
+CMAKE_BINARY_DIR = "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/dlib_build/cpp11_test_build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/cpp11_test_build/CMakeFiles" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/cpp11_test_build/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/dlib_build/cpp11_test_build/CMakeFiles" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/dlib_build/cpp11_test_build/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/cpp11_test_build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/dlib_build/cpp11_test_build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target

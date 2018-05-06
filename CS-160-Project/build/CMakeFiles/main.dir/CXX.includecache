@@ -48,18 +48,62 @@ time.h
 dos.h
 -
 
-/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/dLibLandmarks.cpp
-main.h
-/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/main.h
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/constants.h
 
-/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/main.cpp
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/dLibLandmarks.cpp
 main.h
-/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/main.h
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/main.h
 
-/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/main.h
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/findEyeCenter.cpp
+opencv2/objdetect/objdetect.hpp
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/opencv2/objdetect/objdetect.hpp
+opencv2/highgui/highgui.hpp
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/opencv2/highgui/highgui.hpp
+opencv2/imgproc/imgproc.hpp
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/opencv2/imgproc/imgproc.hpp
+iostream
+-
+queue
+-
+stdio.h
+-
+constants.h
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/constants.h
+helpers.h
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/helpers.h
+
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/findEyeCenter.h
+opencv2/imgproc/imgproc.hpp
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/opencv2/imgproc/imgproc.hpp
+
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/helpers.cpp
+opencv2/objdetect/objdetect.hpp
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/opencv2/objdetect/objdetect.hpp
+opencv2/highgui/highgui.hpp
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/opencv2/highgui/highgui.hpp
+opencv2/imgproc/imgproc.hpp
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/opencv2/imgproc/imgproc.hpp
+iostream
+-
+queue
+-
+stdio.h
+-
+constants.h
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/constants.h
+
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/helpers.h
+
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/main.cpp
+main.h
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/main.h
+
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/main.h
 opencv2/imgproc/imgproc.hpp
 -
 opencv2/highgui/highgui.hpp
+-
+opencv2/objdetect/objdetect.hpp
 -
 dlib/image_processing/frontal_face_detector.h
 -
@@ -67,12 +111,18 @@ dlib/image_processing/render_face_detections.h
 -
 dlib/image_processing.h
 -
+dlib/opencv.h
+-
 dlib/image_io.h
 -
+constants.h
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/constants.h
+findEyeCenter.h
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/findEyeCenter.h
 
-/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/openCVDrawing.cpp
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/openCVDrawing.cpp
 main.h
-/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/main.h
+/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/main.h
 
 /Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/algs.h
 dlib_basic_cpp_build_tutorial.txt
@@ -4292,6 +4342,56 @@ misc_api_kernel_1.h
 
 /Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/numeric_constants.h
 
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/opencv.h
+dlib_basic_cpp_build_tutorial.txt
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/dlib_basic_cpp_build_tutorial.txt
+opencv/cv_image.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/opencv/cv_image.h
+opencv/to_open_cv.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/opencv/to_open_cv.h
+
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/opencv/cv_image.h
+opencv2/core/core.hpp
+-
+opencv2/core/types_c.h
+-
+cv_image_abstract.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/opencv/cv_image_abstract.h
+../algs.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/algs.h
+../pixel.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/pixel.h
+../matrix/matrix_mat.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/matrix/matrix_mat.h
+../image_processing/generic_image.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/image_processing/generic_image.h
+
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/opencv/cv_image_abstract.h
+opencv2/core/core.hpp
+-
+opencv2/core/types_c.h
+-
+../algs.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/algs.h
+../pixel.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/pixel.h
+
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/opencv/to_open_cv.h
+opencv2/core/core.hpp
+-
+to_open_cv_abstract.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/opencv/to_open_cv_abstract.h
+../pixel.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/pixel.h
+../matrix/matrix.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/matrix/matrix.h
+
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/opencv/to_open_cv_abstract.h
+opencv2/core/core.hpp
+-
+../pixel.h
+/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/pixel.h
+
 /Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/optimization.h
 optimization/optimization.h
 /Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib/../dlib/optimization/optimization.h
@@ -8422,6 +8522,10 @@ opencv2/core/vsx_utils.hpp
 
 /usr/local/include/opencv2/core/bufferpool.hpp
 
+/usr/local/include/opencv2/core/core.hpp
+opencv2/core.hpp
+/usr/local/include/opencv2/core/opencv2/core.hpp
+
 /usr/local/include/opencv2/core/core_c.h
 opencv2/core/types_c.h
 /usr/local/include/opencv2/core/opencv2/core/types_c.h
@@ -8770,6 +8874,16 @@ stdlib.h
 stdio.h
 -
 
+/usr/local/include/opencv2/flann/any.h
+defines.h
+/usr/local/include/opencv2/flann/defines.h
+stdexcept
+-
+ostream
+-
+typeinfo
+-
+
 /usr/local/include/opencv2/flann/autotuned_index.h
 sstream
 -
@@ -8805,6 +8919,8 @@ kdtree_index.h
 /usr/local/include/opencv2/flann/kdtree_index.h
 kmeans_index.h
 /usr/local/include/opencv2/flann/kmeans_index.h
+
+/usr/local/include/opencv2/flann/config.h
 
 /usr/local/include/opencv2/flann/defines.h
 config.h
@@ -9068,6 +9184,12 @@ dynamic_bitset.h
 matrix.h
 /usr/local/include/opencv2/flann/matrix.h
 
+/usr/local/include/opencv2/flann/matrix.h
+stdio.h
+-
+general.h
+/usr/local/include/opencv2/flann/general.h
+
 /usr/local/include/opencv2/flann/miniflann.hpp
 opencv2/core.hpp
 /usr/local/include/opencv2/flann/opencv2/core.hpp
@@ -9133,6 +9255,14 @@ general.h
 /usr/local/include/opencv2/flann/general.h
 nn_index.h
 /usr/local/include/opencv2/flann/nn_index.h
+
+/usr/local/include/opencv2/flann/timer.h
+time.h
+-
+opencv2/core.hpp
+/usr/local/include/opencv2/flann/opencv2/core.hpp
+opencv2/core/utility.hpp
+/usr/local/include/opencv2/flann/opencv2/core/utility.hpp
 
 /usr/local/include/opencv2/highgui.hpp
 opencv2/core.hpp
@@ -9239,6 +9369,10 @@ opencv2/core.hpp
 -
 vector
 -
+
+/usr/local/include/opencv2/objdetect/objdetect.hpp
+opencv2/objdetect.hpp
+/usr/local/include/opencv2/objdetect/opencv2/objdetect.hpp
 
 /usr/local/include/opencv2/objdetect/objdetect_c.h
 opencv2/core/core_c.h

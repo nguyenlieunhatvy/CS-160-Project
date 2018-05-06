@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

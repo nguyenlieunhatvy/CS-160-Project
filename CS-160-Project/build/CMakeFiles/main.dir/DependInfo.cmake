@@ -4,9 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/dLibLandmarks.cpp" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles/main.dir/dLibLandmarks.cpp.o"
-  "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/main.cpp" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles/main.dir/main.cpp.o"
-  "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/openCVDrawing.cpp" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles/main.dir/openCVDrawing.cpp.o"
+  "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/dLibLandmarks.cpp" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles/main.dir/dLibLandmarks.cpp.o"
+  "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/findEyeCenter.cpp" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles/main.dir/findEyeCenter.cpp.o"
+  "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/helpers.cpp" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles/main.dir/helpers.cpp.o"
+  "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/main.cpp" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles/main.dir/main.cpp.o"
+  "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/openCVDrawing.cpp" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles/main.dir/openCVDrawing.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
@@ -20,7 +22,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/dlib_build/CMakeFiles/dlib.dir/DependInfo.cmake"
+  "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/dlib_build/CMakeFiles/dlib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

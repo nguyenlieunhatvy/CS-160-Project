@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.11.0/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project"
+CMAKE_SOURCE_DIR = "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build"
+CMAKE_BINARY_DIR = "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -59,48 +59,76 @@ include CMakeFiles/main.dir/flags.make
 
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/main.cpp"
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/main.cpp" > CMakeFiles/main.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/main.cpp" > CMakeFiles/main.dir/main.cpp.i
 
 CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/main.cpp" -o CMakeFiles/main.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/main.cpp" -o CMakeFiles/main.dir/main.cpp.s
 
 CMakeFiles/main.dir/dLibLandmarks.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/dLibLandmarks.cpp.o: ../dLibLandmarks.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/dLibLandmarks.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/dLibLandmarks.cpp.o -c "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/dLibLandmarks.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/dLibLandmarks.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/dLibLandmarks.cpp.o -c "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/dLibLandmarks.cpp"
 
 CMakeFiles/main.dir/dLibLandmarks.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/dLibLandmarks.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/dLibLandmarks.cpp" > CMakeFiles/main.dir/dLibLandmarks.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/dLibLandmarks.cpp" > CMakeFiles/main.dir/dLibLandmarks.cpp.i
 
 CMakeFiles/main.dir/dLibLandmarks.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/dLibLandmarks.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/dLibLandmarks.cpp" -o CMakeFiles/main.dir/dLibLandmarks.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/dLibLandmarks.cpp" -o CMakeFiles/main.dir/dLibLandmarks.cpp.s
 
 CMakeFiles/main.dir/openCVDrawing.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/openCVDrawing.cpp.o: ../openCVDrawing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/openCVDrawing.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/openCVDrawing.cpp.o -c "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/openCVDrawing.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/openCVDrawing.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/openCVDrawing.cpp.o -c "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/openCVDrawing.cpp"
 
 CMakeFiles/main.dir/openCVDrawing.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/openCVDrawing.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/openCVDrawing.cpp" > CMakeFiles/main.dir/openCVDrawing.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/openCVDrawing.cpp" > CMakeFiles/main.dir/openCVDrawing.cpp.i
 
 CMakeFiles/main.dir/openCVDrawing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/openCVDrawing.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/openCVDrawing.cpp" -o CMakeFiles/main.dir/openCVDrawing.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/openCVDrawing.cpp" -o CMakeFiles/main.dir/openCVDrawing.cpp.s
+
+CMakeFiles/main.dir/helpers.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/helpers.cpp.o: ../helpers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/helpers.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/helpers.cpp.o -c "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/helpers.cpp"
+
+CMakeFiles/main.dir/helpers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/helpers.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/helpers.cpp" > CMakeFiles/main.dir/helpers.cpp.i
+
+CMakeFiles/main.dir/helpers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/helpers.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/helpers.cpp" -o CMakeFiles/main.dir/helpers.cpp.s
+
+CMakeFiles/main.dir/findEyeCenter.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/findEyeCenter.cpp.o: ../findEyeCenter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/findEyeCenter.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/findEyeCenter.cpp.o -c "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/findEyeCenter.cpp"
+
+CMakeFiles/main.dir/findEyeCenter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/findEyeCenter.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/findEyeCenter.cpp" > CMakeFiles/main.dir/findEyeCenter.cpp.i
+
+CMakeFiles/main.dir/findEyeCenter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/findEyeCenter.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/findEyeCenter.cpp" -o CMakeFiles/main.dir/findEyeCenter.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/main.cpp.o" \
 "CMakeFiles/main.dir/dLibLandmarks.cpp.o" \
-"CMakeFiles/main.dir/openCVDrawing.cpp.o"
+"CMakeFiles/main.dir/openCVDrawing.cpp.o" \
+"CMakeFiles/main.dir/helpers.cpp.o" \
+"CMakeFiles/main.dir/findEyeCenter.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
@@ -108,6 +136,8 @@ main_EXTERNAL_OBJECTS =
 main: CMakeFiles/main.dir/main.cpp.o
 main: CMakeFiles/main.dir/dLibLandmarks.cpp.o
 main: CMakeFiles/main.dir/openCVDrawing.cpp.o
+main: CMakeFiles/main.dir/helpers.cpp.o
+main: CMakeFiles/main.dir/findEyeCenter.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: dlib_build/libdlib.a
 main: /usr/local/lib/libopencv_stitching.3.4.1.dylib
@@ -164,7 +194,7 @@ main: /usr/local/lib/libopencv_objdetect.3.4.1.dylib
 main: /usr/local/lib/libopencv_imgproc.3.4.1.dylib
 main: /usr/local/lib/libopencv_core.3.4.1.dylib
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -177,6 +207,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles/main.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles/main.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 

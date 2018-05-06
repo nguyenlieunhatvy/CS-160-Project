@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.11.0/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project"
+CMAKE_SOURCE_DIR = "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build"
+CMAKE_BINARY_DIR = "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles" "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -163,6 +163,60 @@ dLibLandmarks.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/dLibLandmarks.cpp.s
 .PHONY : dLibLandmarks.cpp.s
 
+findEyeCenter.o: findEyeCenter.cpp.o
+
+.PHONY : findEyeCenter.o
+
+# target to build an object file
+findEyeCenter.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/findEyeCenter.cpp.o
+.PHONY : findEyeCenter.cpp.o
+
+findEyeCenter.i: findEyeCenter.cpp.i
+
+.PHONY : findEyeCenter.i
+
+# target to preprocess a source file
+findEyeCenter.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/findEyeCenter.cpp.i
+.PHONY : findEyeCenter.cpp.i
+
+findEyeCenter.s: findEyeCenter.cpp.s
+
+.PHONY : findEyeCenter.s
+
+# target to generate assembly for a file
+findEyeCenter.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/findEyeCenter.cpp.s
+.PHONY : findEyeCenter.cpp.s
+
+helpers.o: helpers.cpp.o
+
+.PHONY : helpers.o
+
+# target to build an object file
+helpers.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/helpers.cpp.o
+.PHONY : helpers.cpp.o
+
+helpers.i: helpers.cpp.i
+
+.PHONY : helpers.i
+
+# target to preprocess a source file
+helpers.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/helpers.cpp.i
+.PHONY : helpers.cpp.i
+
+helpers.s: helpers.cpp.s
+
+.PHONY : helpers.s
+
+# target to generate assembly for a file
+helpers.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/helpers.cpp.s
+.PHONY : helpers.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -230,6 +284,12 @@ help:
 	@echo "... dLibLandmarks.o"
 	@echo "... dLibLandmarks.i"
 	@echo "... dLibLandmarks.s"
+	@echo "... findEyeCenter.o"
+	@echo "... findEyeCenter.i"
+	@echo "... findEyeCenter.s"
+	@echo "... helpers.o"
+	@echo "... helpers.i"
+	@echo "... helpers.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

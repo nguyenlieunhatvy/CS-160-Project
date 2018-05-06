@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/main.cpp.o"
   "CMakeFiles/main.dir/dLibLandmarks.cpp.o"
   "CMakeFiles/main.dir/openCVDrawing.cpp.o"
+  "CMakeFiles/main.dir/helpers.cpp.o"
+  "CMakeFiles/main.dir/findEyeCenter.cpp.o"
   "main.pdb"
   "main"
 )
