@@ -29,7 +29,7 @@ void *getLandmarksThread(void *threadArg) {
 
         shape_predictor sp;
         // Use your own path to shape_predictor_68_face_landmarks.dat
-        deserialize("/Users/nguyenlieunhatvy/Documents/SJSU Classes/CS 160/Project/CS-160-Project/CS-160-Project/shape_predictor_68_face_landmarks.dat") >> sp;
+        deserialize("/Users/cyrusjavan/cs160-project/CS-160-Project/CS-160-Project/shape_predictor_68_face_landmarks.dat") >> sp;
         
         
         cv::Rect face;
@@ -122,7 +122,7 @@ void *getLandmarksThread(void *threadArg) {
                 //-- Store Eye Centers in 68 and 69
                 landmarkData[i].points[NUM_LANDMARKS - 2] = dlib::point(leftPupil.x, leftPupil.y);
                 landmarkData[i].points[NUM_LANDMARKS - 1] = dlib::point(rightPupil.x, rightPupil.y);
-                
+            }
                 //Ignore these
                 /*
                 //circle(faceROI, leftPupil, 3, 1234, 3);
@@ -150,7 +150,7 @@ void *getLandmarksThread(void *threadArg) {
         //cout << "Faces: " << facescount << endl;
         //cout << "Faces1: " << faces1count << endl;
     }
-    catch (exception& e)
+    catch(exception& e)
     {
         cout << "\nexception thrown!" << endl;
         cout << e.what() << endl;
