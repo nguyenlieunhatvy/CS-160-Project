@@ -5,5 +5,5 @@ project(CS160)
 find_package( OpenCV REQUIRED )
 
 add_subdirectory(/Users/nguyenlieunhatvy/Documents/Software/dlib-19.10/dlib dlib_build)
-add_executable(main main.cpp dLibLandmarks.cpp openCVDrawing.cpp)
+add_executable(main main.cpp dLibLandmarks.cpp openCVDrawing.cpp helpers.cpp findEyeCenter.cpp)
 target_link_libraries(main dlib::dlib ${OpenCV_LIBS})
