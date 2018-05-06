@@ -1,14 +1,24 @@
 # CS-160-Project
 
-Table of contents:
+## To compile the dlib/OpenCV main executable:
+```
+cd <YOUR_PATH_TO>/CS-160-Project/CS-160-Project/
 
-CS-160-Project: Video processing files (Backend)
-
-teamone: Web related files (Frontend UI)
-
-To compile:
-cd examples
 mkdir build
+
 cd build
+
 cmake ..
+
 cmake --build . --config Release
+```
+## To compile the pipeline executable:
+```
+cd <YOUR_PATH_TO>/CS-160-Project/CS-160-Project/
+
+g++ -o pp processPipeline.cpp
+```
+## Pipeline Usage:
+```
+./pp <PATH_TO_VIDEO> main
+```
