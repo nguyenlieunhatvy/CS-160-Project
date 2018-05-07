@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <regex>
 using namespace std;
 // processPipeline is the entry point for the processing pipeline
 // Usage: ./processPipeline PATH_TO_VIDEO PATH_TO_MAIN_PROCESSING_EXECUTABLE
@@ -27,15 +28,20 @@ int main(int argc, char **argv){
 
 	// process the frames
 	snprintf(splitString, sizeof(splitString) - 1, "cd build; ./%s ./Input/*.png; cd ..;", argv[2]);
-	//cout << "The string !!" << splitString << "\n"; // For debugging
+	// cout << "The string !!" << splitString << "\n"; // For debugging
     std::system(splitString);
     
 	// Reassemble the frames and overwrite the given video
-    snprintf(splitString, sizeof(splitString) - 1, "ffmpeg -y -r %s -start_number 1 -f image2 -i ./build/Output/OUTPUT-out%%04d.png -vcodec mjpeg -qscale 1  %s",frameRate, argv[1]);
+    snprintf(splitString, sizeof(splitString) - 1, "ffmpeg -y -r %s -start_number 1 -f image2 -i ./build/Output/OUTPUT-out%%04d.png -qscale 1  %s",frameRate, argv[1]);
  	// cout << "The string !!" << splitString << "\n"; // For debugging
     std::system(splitString);
 
 	// Finally clean up the Input and Output directory
 	std::system("rm ./build/Input/*.png");
+	std::string thumbDest = std::regex_replace(argv[1], std::regex("\\.\\.\\/video\\/([0-9\\-_]+)\\.\\w+"), "../thumbnail/$1.png");
+    snprintf(splitString, sizeof(splitString) - 1, "mv ./build/Output/OUTPUT-out0010.png %s", thumbDest.c_str());
+    std::system(splitString); //"mv ./build/Output/OUTPUT-out0010.png %s")
+    snprintf(splitString, sizeof(splitString) - 1, "convert %s -resize 57x42! %s", thumbDest.c_str(), thumbDest.c_str());
+    std::system(splitString);
     std::system("rm ./build/Output/*.png");
 }

@@ -26,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     foreach (glob("$_SERVER[DOCUMENT_ROOT]/res/video/$_SESSION[uid]_[0-9][0-9][0-9][0-9]-" .
                         "[0-9][0-9]-[0-9][0-9]_[0-9][0-9]-[0-9][0-9]-[0-9][0-9].*") as $file)
                         unlink($file);
-                    /* foreach (glob("$_SERVER[DOCUMENT_ROOT]/res/thumbnail/$_SESSION[uid]_[0-9][0-9][0-9][0-9]-" .
+                    foreach (glob("$_SERVER[DOCUMENT_ROOT]/res/thumbnail/$_SESSION[uid]_[0-9][0-9][0-9][0-9]-" .
                         "[0-9][0-9]-[0-9][0-9]_[0-9][0-9]-[0-9][0-9]-[0-9][0-9].*") as $file)
-                        unlink($file);*/
+                        unlink($file);
                     echo "success";
                     exit;
                 }

@@ -18,7 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->bindValue(2, $_POST["path"]);
             if ($stmt->execute()) {
                 unlink($_SERVER["DOCUMENT_ROOT"] . "/res/video/" . $_POST["path"]); // rm
-                // unlink($_SERVER["DOCUMENT_ROOT"] . "/res/thumbnail/" . $_POST["path"]);
+                unlink($_SERVER["DOCUMENT_ROOT"] . "/res/thumbnail/" .
+                    preg_replace("/\.\w+$/", ".png", $_POST["path"]));
                 echo "success";
             }
         } else if ($_POST["modifyType"] === "rename" && isset($_POST["title"])) {

@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (move_uploaded_file($tmpFile, $destFullPath)) {
             $pdo = new PDO(apache_getenv("PGSQL_DB_DSN"));
             $stmt = $pdo->prepare("INSERT INTO Video(uploaderid,title,uploaddate," .
-                "filesize,path,isprocessed) VALUES(?,?,localtimestamp(0),?,?,TRUE)");
+                "filesize,path) VALUES(?,?,localtimestamp(0),?,?)");
             $stmt->bindValue(1, $_SESSION["uid"], PDO::PARAM_INT);
             $stmt->bindValue(2, $_POST["title"] ? $_POST["title"] : $_FILES["video"]["name"]);
             $stmt->bindValue(3, $_FILES["video"]["size"], PDO::PARAM_INT);
