@@ -8,12 +8,14 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/calib3d/calib3d.hpp>
 
 #include <dlib/image_processing/frontal_face_detector.h>
 #include <dlib/image_processing/render_face_detections.h>
 #include <dlib/image_processing.h>
 #include <dlib/opencv.h>
 #include <dlib/image_io.h>
+#include <math.h>   
 #include "constants.h"
 #include "findEyeCenter.h"
 
@@ -44,6 +46,11 @@ typedef struct thread_data {
     int numImages;
     landmark_data *landmarkData;
 } thread_data;
+
+inline cv::Point2f toCv(const point& p)
+{
+    return cv::Point2f(p.x(), p.y());
+}
 
 face_landmark_node * add_face_landmark_element(face_landmark_node *face_landmark_list_head, int frame, int indice, float pixel_location_x, float pixel_location_y);
 face_landmark_node * buildLandmarkListThread(landmark_data landmarks, face_landmark_node* face_landmark_list_head, int frame);
