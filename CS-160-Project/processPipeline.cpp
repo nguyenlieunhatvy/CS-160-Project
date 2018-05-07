@@ -31,7 +31,7 @@ int main(int argc, char **argv){
     std::system(splitString);
     
 	// Reassemble the frames and overwrite the given video
-    snprintf(splitString, sizeof(splitString) - 1, "ffmpeg -r %s -start_number 1 -f image2 -i ./build/Output/OUTPUT-out%%04d.png -vcodec mjpeg -qscale 1  %s",frameRate, argv[1]);
+    snprintf(splitString, sizeof(splitString) - 1, "ffmpeg -y -r %s -start_number 1 -f image2 -i ./build/Output/OUTPUT-out%%04d.png -vcodec mjpeg -qscale 1  %s",frameRate, argv[1]);
  	// cout << "The string !!" << splitString << "\n"; // For debugging
     std::system(splitString);
 
