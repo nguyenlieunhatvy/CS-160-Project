@@ -19,6 +19,8 @@
 #include "constants.h"
 #include "findEyeCenter.h"
 
+#include <pqxx/pqxx> // Postgres API
+
 #define NUM_THREADS (std::thread::hardware_concurrency())
 #define NUM_LANDMARKS 70
 #define FACE_CASCADE_NAME "../res/haarcascade_frontalface_alt.xml"

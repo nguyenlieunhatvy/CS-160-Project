@@ -131,7 +131,7 @@ void *getLandmarksThread(void *threadArg)
 
                 // Solve for pose
                 // solvePnP will fill rotation_vector
-                cv::solvePnP(model_points, image_points, camera_matrix, dist_coeffs, rotation_vector, translation_vector,cv::ITERATIVE);
+                cv::solvePnP(model_points, image_points, camera_matrix, dist_coeffs, rotation_vector, translation_vector, cv::ITERATIVE);
 
                 // yaw, pitch, roll formulas from:
                 // http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.371.6578&rep=rep1&type=pdf
@@ -148,11 +148,13 @@ void *getLandmarksThread(void *threadArg)
                 else
                 {
                     yaw = 0;
-                    if(rotation_vector.at<double>(2, 0) == -1){
+                    if (rotation_vector.at<double>(2, 0) == -1)
+                    {
                         pitch = pi / 2;
                         roll = yaw + atan2(rotation_vector.at<double>(0, 1), rotation_vector.at<double>(0, 2));
                     }
-                    else{
+                    else
+                    {
                         pitch = pi / 2;
                         roll = (-1 * yaw) + atan2((rotation_vector.at<double>(0, 1) * -1), (rotation_vector.at<double>(0, 2) * -1));
                     }
@@ -172,6 +174,45 @@ void *getLandmarksThread(void *threadArg)
                 // }
                 // cv::line(debug_img, image_points[0], nose_end_point2D[0], cv::Scalar(255, 0, 0), 2);
                 // cv::imwrite("./Input/Debug/debug" + string(&(images[i][8])), debug_img);
+
+                // Connect to the database and write in yaw,pitch,roll
+                // Comment out this try/catch if you aren't running curently running a pg database
+                try
+                {
+                    char sql[1024];
+                    // TODO: Change to correct parameters
+                    pqxx::connection C("dbname = testdb user = postgres password = cohondob \
+                hostaddr = 127.0.0.1 port = 5432");
+                    if (C.is_open())
+                    {
+                        cout << "Opened database successfully: " << C.dbname() << endl;
+                    }
+                    else
+                    {
+                        cout << "Can't open database" << endl;
+                    }
+                    //Example SQL
+                    // TODO: Fill in with correct statement
+                    // Possible issue, how do we know what viedo we are currently working on?
+                    snprintf(sql, sizeof(sql) -1, "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) "
+                          "VALUES (1, 'Paul', 32, 'California', 20000.00 ); "
+                          "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) "
+                          "VALUES (2, 'Allen', 25, 'Texas', 15000.00 ); "
+                          "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)"
+                          "VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );", yaw, pitch, roll );
+
+                    /* Create a transactional object. */
+                    work W(C);
+
+                    /* Execute SQL query */
+                    W.exec(sql);
+                    W.commit();
+                    C.disconnect();
+                }
+                catch (const std::exception &e)
+                {
+                    cerr << e.what() << std::endl;
+                }
 
                 // faceROI is the image for pupil dectection
                 face = cv::Rect(faces[j].left(), faces[j].top(), faces[j].width(), faces[j].height());
