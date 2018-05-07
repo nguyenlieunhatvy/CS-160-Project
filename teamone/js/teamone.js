@@ -149,29 +149,44 @@ var teamone = (function() {
             });
         },
 
-        "selectVideo": function (title, path, isProcessed) {
-            if (!parseInt(isProcessed)) {
-                $("#video_box").children("div").html("It appears the video has not finished processing yet." +
-                    "<br />Please try again later.");
-                return;
-            }
-            $("video").attr("src", "/res/video/" + path)
-                .prop("controls", true).css("background-color", "black").prev().remove();
-            var vset = $("#video_settings");
-            vset.children("span").html("Playing: " + title);
-            if (!pathToCurrentlySelected) {
-                vset.children("div").each(function () {
-                    $(this).css({
-                        "background-image": $(this).css("background-image").replace(/_n(?=\.\w+"\)$)/, ""),
-                        "cursor": "pointer"
-                    }).click(function () { // bind click event
-                        var isDeleteVideo = $(this).get(0).id === "delete_video";
-                        showPopUp(isDeleteVideo ? "video_settings/delete_video.html" :
-                            "video_settings/rename_video.html");
-                    });
-                });
-            }
-            pathToCurrentlySelected = path;
+        "selectVideo": function (title, path, vid) {
+            $.ajax({ // check if isProcessed
+                "data": {
+                    "check": "1",
+                    "vid": vid
+                },
+                "dataType": "text",
+                "method": "POST",
+                "url": "/php/process_video.php"
+            }).done(function (data) { // data has path to thumbnail
+                console.log(data);
+                if (data === "complete") {
+                    $("video").attr("src", "/res/video/" + path)
+                        .prop("controls", true).css("background-color", "black").prev().remove();
+                    var vset = $("#video_settings");
+                    vset.children("span").html("Playing: " + title);
+                    if (!pathToCurrentlySelected) {
+                        vset.children("div").each(function () {
+                            $(this).css({
+                                "background-image": $(this).css("background-image").replace(/_n(?=\.\w+"\)$)/, ""),
+                                "cursor": "pointer"
+                            }).click(function () { // bind click event
+                                var isDeleteVideo = $(this).get(0).id === "delete_video";
+                                showPopUp(isDeleteVideo ? "video_settings/delete_video.html" :
+                                    "video_settings/rename_video.html");
+                            });
+                        });
+                    }
+                    pathToCurrentlySelected = path;
+                } else {
+                    var vbox = $("#video_box");
+                    if (vbox.children("div").length === 0)
+                        vbox.prepend("<div></div><video width='384' height='288'></video>")
+                            .children("video").eq(1).remove();
+                    vbox.children("div").html("It appears the video has not finished processing yet." +
+                        "<br />Please try again later.");
+                }
+            });
         },
 
         "showSignUp": function () {
@@ -267,22 +282,23 @@ var teamone = (function() {
                     }).done(function (data) {
                         console.log(data);
                         if (data === "success") {
-                            /*var timer = setInterval(function () {
+                            var timer = setInterval(function () {
                                 $.ajax({
                                     "data": {
-                                        "check": "1",
+                                        "check": true,
                                         "vid": videoId
                                     },
-                                    "dataTyp": "text",
+                                    "dataType": "text",
                                     "method": "POST",
                                     "url": "/php/process_video.php"
                                 }).done(function(data) {
-                                    if (data === "complete") */
+                                    if (data === "complete") {
                                         $("#pop_up_window").find(".loading").removeClass("loading")
                                             .addClass("check").next().html("Processing Complete!");
-                                    /*clearInterval(timer);
+                                        clearInterval(timer);
+                                    }
                                 })
-                            }, 5000);*/
+                            }, 5000);
                         }
                     });
                 }

@@ -18,6 +18,5 @@ CREATE TABLE Video (
   title VARCHAR(64),
   uploadDate TIMESTAMP,
   fileSize INT,
-  path VARCHAR(28),
-  isProcessed BOOLEAN
+  path VARCHAR(28)
 );
