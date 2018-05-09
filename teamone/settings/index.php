@@ -26,7 +26,7 @@ require "StandardPage.php";
             }
         }
     </style>
-    <?php $page = new StandardPage("Account Settings", "/js/teamone.js"); ?>
+    <?php $page = new StandardPage("Account Settings"); ?>
 </head>
 
 <body>

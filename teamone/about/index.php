@@ -37,17 +37,13 @@ require "StandardPage.php";
         </div>
         <div>
             <span class="sub_header">Who Are You Guys?</span><br />
-            Just innocent San Jose State University Computer Science students! (as of May 2018)
+            San Jose State University Computer Science students! (as of May 2018)
             <ul>
                 <li>Bruno Esquivel - Database Manager</li>
                 <li>Joe Kanagawa -  UI/UX Designer, Frontend System Developer</li>
                 <li>Cyrus Javan - Backend System Developer (Drawing Delaunay Triangles)</li>
-                <li>Vy Nguyen Lieu - Backend System Developer</li>
+                <li>Vy Nguyen Lieu - Backend System Developer (Eye pupil tracking)</li>
             </ul>
-        </div>
-        <div>
-            <span class="sub_header">All Personal Information Is Protected, Right?</span><br />
-            Absolutely. Please read our <a>privacy policy</a>.<br /><br />
         </div>
         <div>
             <span class="sub_header">I Wish To Be a One-time User</span><br />

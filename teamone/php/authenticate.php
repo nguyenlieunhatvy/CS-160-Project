@@ -20,8 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if (password_verify($_POST["pwd"], $row[1])) { // login success inside this if block
                 $_SESSION["uid"] = $row[0];
                 $_SESSION["firstname"] = $row[2];
-                $stmt = $pdo->prepare("UPDATE Userbase SET lastlogin = localtimestamp(0) WHERE id = ?");
-                $stmt->bindValue(1, $_SESSION["uid"], PDO::PARAM_INT);
+                $stmt = $pdo->prepare("UPDATE Userbase SET lastlogin = localtimestamp(0), ipaddr = ? WHERE id = ?");
+                $stmt->bindValue(1, $_SERVER["REMOTE_ADDR"]);
+                $stmt->bindValue(2, $_SESSION["uid"], PDO::PARAM_INT);
                 $stmt->execute();
                 session_regenerate_id(true);
                 header("Location: /");

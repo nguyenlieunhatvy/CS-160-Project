@@ -77,10 +77,6 @@ input:not([type="submit"]) {
             }
             &:last-child {
                 padding-left: 20px;
-                /*> input:not([type="submit"]) {
-                    width: 100%;
-                    box-sizing: border-box;
-                }*/
             }
         }
         &.pwd_not_match {
@@ -90,7 +86,6 @@ input:not([type="submit"]) {
                 vertical-align: top;
                 > span {
                     position: absolute;
-                    bottom: 7px;
                     color: red;
                     font-size: 0.88em;
                 }
@@ -145,7 +140,7 @@ input:not([type="submit"]) {
 .thumbnail {
     min-width: 57px;
     height: 100%;
-    background-color: #364364;
+    background-color: #2d5264;
 }
 
 .uap_each_container {
@@ -162,8 +157,6 @@ input:not([type="submit"]) {
 }
 
 .video_entry {
-    //display: flex;
-    //flex-wrap: wrap;
     font-size: 0.85em;
     cursor: pointer;
     > div:first-of-type {
@@ -180,13 +173,6 @@ input:not([type="submit"]) {
             > div {
                 margin-left: 4px;
                 flex-grow: 1;
-                /*> div {
-                    display: inline-block;
-                    width: 16px;
-                    height: 16px;
-                    transform: scale(0.5,0.5);
-                    background-image: url("/res/img/common/donotenter.png");
-                }*/
             }
         }
     }
@@ -239,7 +225,15 @@ input:not([type="submit"]) {
     position: fixed;
     background: linear-gradient(0deg, #110615, #115615);
     border-width: 0 0 20px 0;
-    color: white; /* 暫定的 */
+    > a {
+        color: #b81c30 !important;
+        position: absolute;
+        bottom: 0;
+        font-size: 1.8em;
+        font-family: Ubuntu, serif;
+        font-style: italic;
+        font-weight: bold;
+    }
     height: 48px;
     top: 0;
     left: 0;
@@ -256,7 +250,6 @@ input:not([type="submit"]) {
 #main_window {
     margin: 60px auto 30px;
     width: 280px;
-    // min-height: 200px;
 }
 
 #pop_up_bg {
@@ -268,7 +261,7 @@ input:not([type="submit"]) {
     bottom: 0;
     right: 0;
     z-index: 10;
-    > div { /* ポップアップウィンドウを縦中央に配置させるためにtableコンテナを配置 */
+    > div { /* to align the pop up window vertical middle, using a container */
         display: table;
         margin: auto;
         width: 100%;
@@ -308,6 +301,7 @@ input:not([type="submit"]) {
     }
     > video {
         position: absolute;
+        border: solid 2px transparent;
         top: 0;
         left: 0;
     }

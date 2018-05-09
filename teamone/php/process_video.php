@@ -29,12 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->bindValue(2, $_SESSION["uid"], PDO::PARAM_INT);
             $stmt->execute();
             if ($row = $stmt->fetch()) {
-                // echo $row[0] . "\n"; # d
                 exec("cd /home/j_kang/PhpstormProjects/CS-160-Project/teamone/res/cpp && " .
                     "./pp ../video/$row[0] main > /dev/null &", $o);
-                /* foreach ($o as $item) echo ($item . "\n"); # d
-                foreach ($printed as $item)
-                    echo $item . "\n"; */
                 echo "success";
             }
         }

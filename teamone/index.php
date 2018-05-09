@@ -13,7 +13,7 @@ require "StandardPage.php"
 <html>
 <head>
     <?php
-    $page = new StandardPage("Welcome!", "/js/teamone.js");
+    $page = new StandardPage("Welcome!");
     ?>
 </head>
 

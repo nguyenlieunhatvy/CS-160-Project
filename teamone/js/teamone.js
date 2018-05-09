@@ -50,20 +50,26 @@ var teamone = (function() {
                 }
                 return false;
             })($(this))) {
-            $("#new_submit").prop("disabled", true); // 空 or パスワードがマッチしない
-            return false; // each関数を早期脱却
+            $("#new_submit").prop("disabled", true); // empty or the pwd does not match
+            return false; // break out of the each function
         } else
             $("#new_submit").prop("disabled", false);
     }
 
     // The below are public functions
     return {
+        /**
+         * Shows a pop up for account deletion confirmation.
+         */
         "confirmDelete": function () {
             showPopUp("settings_popup/delete_account.html").on("input", function () {
                 $("#pop_up_window").find("input").not("#new_submit").each(enableSubmitWhenAppropriate);
             });
         },
 
+        /**
+         * Issues verification code after entering all user information while signing up.
+         */
         "createAccount": function () {
             userInfo = {
                 "first": $("#new_first_name").val(),
@@ -89,12 +95,14 @@ var teamone = (function() {
                             "Please pick a different username.</span>");
                     }
                 } else {
-                    console.log(data);
                     $("#pop_up_window").load("/signup/verify.html").children().remove();
                 }
             });
         },
 
+        /**
+         * Calls the script that deletes the account while logged in.
+         */
         "deleteAccount": function () {
             $.ajax({
                 "data": {
@@ -103,7 +111,6 @@ var teamone = (function() {
                 "method": "POST",
                 "url": "/php/delete_account.php"
             }).done(function (data) {
-                console.log(data);
                 switch (data) {
                     case "fail":
                         var popUpWindow = $("#pop_up_window");
@@ -119,6 +126,10 @@ var teamone = (function() {
             });
         },
 
+        /**
+         * Removes or renames the video.
+         * @param {string} type If "delete" was passed, the video will be removed. If "rename", rename the video.
+         */
         "modifyVideo": function (type) {
             var data = {
                 "modifyType": type,
@@ -140,6 +151,9 @@ var teamone = (function() {
             });
         },
 
+        /**
+         * Calls the script that logs the user out of the system.
+         */
         "logOut": function () {
             $.ajax({
                 "method": "POST",
@@ -149,6 +163,12 @@ var teamone = (function() {
             });
         },
 
+        /**
+         * Selects the video in the list of uploaded videos on the control panel.
+         * @param {string} title The name of the video selected.
+         * @param {string} path The path (basename) to the video selected.
+         * @param {string} vid The DB video ID assigned to the video selected.
+         */
         "selectVideo": function (title, path, vid) {
             $.ajax({ // check if isProcessed
                 "data": {
@@ -159,12 +179,11 @@ var teamone = (function() {
                 "method": "POST",
                 "url": "/php/process_video.php"
             }).done(function (data) { // data has path to thumbnail
-                console.log(data);
+                var vset = $("#video_settings");
+                vset.children("span").html("Playing: " + title);
                 if (data === "complete") {
                     $("video").attr("src", "/res/video/" + path)
                         .prop("controls", true).css("background-color", "black").prev().remove();
-                    var vset = $("#video_settings");
-                    vset.children("span").html("Playing: " + title);
                     if (!pathToCurrentlySelected) {
                         vset.children("div").each(function () {
                             $(this).css({
@@ -185,17 +204,28 @@ var teamone = (function() {
                             .children("video").eq(1).remove();
                     vbox.children("div").html("It appears the video has not finished processing yet." +
                         "<br />Please try again later.");
+                    vset.children("div").remove();
+                    vset.append("<div id='delete_video' title='Click here to delete the selected video' ></div>\n" +
+                        "<div id='rename_video' title='Click here to rename the selected video'></div>");
+                    pathToCurrentlySelected = "";
                 }
             });
         },
 
+        /**
+         * The first pop up for the sign up process.
+         */
         "showSignUp": function () {
-            showPopUp("/signup/body.html").on("input", function () {
+            showPopUp($.isEmptyObject(userInfo) ? "/signup/body.html" : "/signup/verify.html").on("input", function () {
                 // check here if all fields are entered. If not, disable the sign up button.
                 $("#pop_up_window").find("input").not("#new_submit").each(enableSubmitWhenAppropriate);
             });
         },
 
+        /**
+         * Updates various user information.
+         * @param {string} path The path to the pop up HTML file.
+         */
         "showUpdate": function (path) {
             showPopUp(path, function () {
                 $("#new_submit").click(function () {
@@ -242,6 +272,9 @@ var teamone = (function() {
             });
         },
 
+        /**
+         * Shows the upload video pop up.
+         */
         "showUpload": function () {
             showPopUp("/upload/details_prompt.html", function() {
                 $("#pop_up_window").find("input[type='file']").change(function() {
@@ -251,6 +284,9 @@ var teamone = (function() {
 
         },
 
+        /**
+         * Actually uploads a video by calling the corresponding script.
+         */
         "upload": function () {
             var popUpWindow = $("#pop_up_window");
             var data = new FormData();
@@ -280,7 +316,6 @@ var teamone = (function() {
                         "method": "POST",
                         "url": "/php/process_video.php"
                     }).done(function (data) {
-                        console.log(data);
                         if (data === "success") {
                             var timer = setInterval(function () {
                                 $.ajax({
@@ -306,6 +341,9 @@ var teamone = (function() {
             });
         },
 
+        /**
+         * Calls a script that verifies if the entered verification code is valid.
+         */
         "verify": function() {
             $.ajax({
                 "data": {
@@ -324,6 +362,7 @@ var teamone = (function() {
                 switch (data) {
                     case "success":
                         popUpWindow.load("/signup/success.html").children().remove();
+                        userInfo = {};
                         break;
                     case "fail":
                         if (popUpWindow.find(".fail_msg").length === 0) {
@@ -341,9 +380,37 @@ var teamone = (function() {
                             popUpWindow.children(".sub_header").after($("<span class='expired_msg pop_up_err_msg'>" +
                                 "Verification code has been expired. " +
                                 "Please restart the registration process.</span><br class='expired_msg' />"));
+                            userInfo = {};
                         }
                 }
             });
         }
     };
 })();
+
+$(function() {
+    $("#header").children("a").mouseenter(function () {
+        var action = function (jq) {
+            jq.animate({
+                "left": "5px"
+            }, 10).animate({
+                "left": "-5px"
+            }, 35).animate({
+                "left": "0px"
+            }, 10);
+        };
+        action($(this));
+        var timer = setInterval(action.bind(null, $(this)), 55);
+        (function (jq) {
+            var def = new $.Deferred();
+            jq.mouseleave(function () {
+                clearInterval(timer);
+                $(this).finish();
+                def.resolveWith($(this));
+            });
+            return def.promise();
+        })($(this)).done(function () {
+            $(this).css("left", "0");
+        });
+    });
+});

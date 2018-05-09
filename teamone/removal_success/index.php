@@ -25,7 +25,7 @@ require "StandardPage.php";
 
 <html>
 <head>
-    <?php $page = new StandardPage("Account Successfully Deleted", "/js/teamone.js"); ?>
+    <?php $page = new StandardPage("Account Successfully Deleted"); ?>
 </head>
 
 <body>

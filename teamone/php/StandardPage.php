@@ -8,18 +8,13 @@ class StandardPage {
     /**
      * StandardPage constructor.
      * @param string $title String literal to be inserted between the title tag.
-     * @param string|array $js Path to JavaScript files. May specify multiple in an array.
      */
-    public function __construct($title, $js = "") {
+    public function __construct($title) {
         $echoStr = "<meta charset='UTF-8' />" .
             "<link rel='stylesheet/less' type='text/less' href='/css/teamone.less' />" .
             "<script src='https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js' ></script>" .
-            "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>";
-        if (is_array($js)) {
-            foreach ($js as $path)
-                $echoStr .= "<script src='$path'></script>";
-        } else
-            $echoStr .= "<script src='$js'></script>";
+            "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>" .
+            "<script src='/js/teamone.js'></script>";
         echo $echoStr . "<title>$title - TEAM ONE</title>";
     }
 
@@ -68,9 +63,9 @@ class StandardPage {
         while ($row = $stmt->fetch()) {
             $thumbnailFile = preg_replace("/.\w+$/", ".png", $row[3]);
             $thumbnail = file_exists($_SERVER["DOCUMENT_ROOT"] . "/res/thumbnail/$thumbnailFile") ?
-                "url(/res/thumbnail/$thumbnailFile)" : "#333333";
+                "style='background: url(/res/thumbnail/$thumbnailFile)'" : "";
             $echoStr .= "<div class='video_entry' onclick='teamone.selectVideo(\"$row[0]\", \"$row[3]\", \"$row[4]\")'>" .
-                "<div><div class='thumbnail' style='background: $thumbnail'></div><div><div><span title='$row[0]'>$row[0]" .
+                "<div><div class='thumbnail' $thumbnail></div><div><div><span title='$row[0]'>$row[0]" .
                 "</span></div><div>Size: $row[2]B</div></div></div><div>Upload: $row[1]</div></div>";
         }
         echo $echoStr;
@@ -99,8 +94,8 @@ class StandardPage {
      * Prints HTML code of header shown at the top of the page.
      */
     public function printHeader() {
-        echo "<div class='text_box' id='header'>" .
-            "WELCOME! (to do: come up with a better header)</div>";
+        echo "<div class='text_box' id='header'><a href='/'>" .
+            "TEAM ONE</a></div>";
     }
 
     /**
