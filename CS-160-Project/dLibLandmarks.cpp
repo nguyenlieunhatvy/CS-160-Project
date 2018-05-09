@@ -131,7 +131,7 @@ void *getLandmarksThread(void *threadArg)
 
                 // Solve for pose
                 // solvePnP will fill rotation_vector
-                cv::solvePnP(model_points, image_points, camera_matrix, dist_coeffs, rotation_vector, translation_vector,cv::ITERATIVE);
+                cv::solvePnP(model_points, image_points, camera_matrix, dist_coeffs, rotation_vector, translation_vector,CV_ITERATIVE);
 
                 // yaw, pitch, roll formulas from:
                 // http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.371.6578&rep=rep1&type=pdf
