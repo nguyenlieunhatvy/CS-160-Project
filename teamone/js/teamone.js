@@ -87,6 +87,7 @@ var teamone = (function() {
                 "method": "POST",
                 "url": "/php/signup.php"
             }).done(function (data) {
+                console.log(data);
                 if (data === "user_exists") {
                     var popUpWindow = $("#pop_up_window");
                     if (popUpWindow.find(".exists_msg").length === 0) {
